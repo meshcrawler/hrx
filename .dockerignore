@@ -1,0 +1,12 @@
+**
+!.ci-image-input/
+!.ci-image-input/**
+!tests/
+!tests/compatibility/
+!tests/compatibility/ci/
+!tests/compatibility/ci/**
+!tests/compatibility/ci/Dockerfile
+!artifacts/
+!artifacts/upgrade/
+!artifacts/upgrade/resolved.json
+!artifacts/upgrade/toolchain.candidate.json

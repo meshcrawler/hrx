@@ -1,0 +1,8 @@
+/bin/
+*.test
+coverage.out
+__pycache__/
+*.pyc
+/artifacts/
+/.ci-image-input/
+/.twons/

@@ -1,0 +1,14 @@
+# Paths (git pathspecs, relative to the repository root) left out of the public
+# export. They stay in the private repository.
+
+# Research records, run evidence and private deployment configuration.
+experiments
+deploy
+docs/internal
+
+# Private CI: runners, registry images and live lanes against private services.
+.gitlab-ci.yml
+tests/compatibility/ci
+
+# The book's scrub list names private infrastructure.
+book/scrub-patterns.txt

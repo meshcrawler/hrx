@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "cells": [
+    {
+      "id": "claude-sonnet",
+      "harness": "claude",
+      "canonical_model": "claude-sonnet-5-5",
+      "route": "claude-sonnet-5-5",
+      "protocol": "messages",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true,
+      "family": "claude-sonnet",
+      "selection": "latest",
+      "route_policy": {
+        "provider": "anthropic",
+        "route_prefixes": [
+          "claude-"
+        ]
+      }
+    },
+    {
+      "id": "claude-opus",
+      "harness": "claude",
+      "canonical_model": "claude-opus-5-5",
+      "route": "claude-opus-5-5",
+      "protocol": "messages",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": false,
+      "family": "claude-opus",
+      "selection": "latest",
+      "route_policy": {
+        "provider": "anthropic",
+        "route_prefixes": [
+          "claude-"
+        ]
+      }
+    },
+    {
+      "id": "claude-haiku",
+      "harness": "claude",
+      "canonical_model": "claude-haiku-5-5",
+      "route": "claude-haiku-5-5",
+      "protocol": "messages",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": false,
+      "family": "claude-haiku",
+      "selection": "latest",
+      "route_policy": {
+        "provider": "anthropic",
+        "route_prefixes": [
+          "claude-"
+        ]
+      }
+    },
+    {
+      "id": "codex-sol",
+      "harness": "codex",
+      "canonical_model": "gpt-6.1-sol",
+      "route": "tfy-contoso/gpt-6.1-sol",
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true,
+      "family": "gpt-sol",
+      "selection": "latest",
+      "route_policy": {
+        "provider": "truefoundry",
+        "account": "contoso",
+        "route_prefixes": [
+          "tfy-contoso/"
+        ]
+      }
+    },
+    {
+      "id": "codex-astra",
+      "harness": "codex",
+      "canonical_model": "gpt-6-astra",
+      "route": "gpt-6-astra",
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": false,
+      "family": "gpt-astra",
+      "selection": "latest",
+      "route_policy": {
+        "provider": "chatgpt",
+        "route_prefixes": [
+          "gpt-"
+        ]
+      }
+    },
+    {
+      "id": "claude-kimi",
+      "harness": "claude",
+      "canonical_model": "kimi-k3",
+      "route": "fw-acme-kimi-k3",
+      "protocol": "messages",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "claude-glm",
+      "harness": "claude",
+      "canonical_model": "glm-5p3",
+      "route": "fw-acme-glm-5p3",
+      "protocol": "messages",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "claude-deepseek",
+      "harness": "claude",
+      "canonical_model": "deepseek-v4-pro",
+      "route": "or-acme/deepseek/deepseek-v4-pro",
+      "protocol": "messages",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "codex-kimi",
+      "harness": "codex",
+      "canonical_model": "kimi-k3",
+      "route": "fw-acme-kimi-k3",
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "codex-glm",
+      "harness": "codex",
+      "canonical_model": "glm-5p3",
+      "route": "fw-acme-glm-5p3",
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "codex-deepseek",
+      "harness": "codex",
+      "canonical_model": "deepseek-v4-pro",
+      "route": "or-acme/deepseek/deepseek-v4-pro",
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "opencode-kimi",
+      "harness": "opencode",
+      "canonical_model": "kimi-k3",
+      "route": "fw-acme-kimi-k3",
+      "protocol": "chat_completions",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "opencode-glm",
+      "harness": "opencode",
+      "canonical_model": "glm-5p3",
+      "route": "fw-acme-glm-5p3",
+      "protocol": "chat_completions",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "opencode-deepseek",
+      "harness": "opencode",
+      "canonical_model": "deepseek-v4-pro",
+      "route": "or-acme/deepseek/deepseek-v4-pro",
+      "protocol": "chat_completions",
+      "reasoning": "",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "codex-luna",
+      "harness": "codex",
+      "family": "gpt-luna",
+      "selection": "latest",
+      "canonical_model": "gpt-5.6-luna",
+      "route": "gpt-5.6-luna",
+      "route_policy": {
+        "provider": "chatgpt",
+        "route_prefixes": [
+          "gpt-"
+        ]
+      },
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    },
+    {
+      "id": "codex-terra",
+      "harness": "codex",
+      "family": "gpt-terra",
+      "selection": "latest",
+      "canonical_model": "gpt-5.6-terra",
+      "route": "gpt-5.6-terra",
+      "route_policy": {
+        "provider": "chatgpt",
+        "route_prefixes": [
+          "gpt-"
+        ]
+      },
+      "protocol": "responses",
+      "reasoning": "low",
+      "auth_profile": "ci-gateway",
+      "required": true,
+      "canary": true
+    }
+  ],
+  "resume_pairs": [
+    {"id": "cross-resume-claude", "source": "claude-sonnet", "target": "claude-opus"},
+    {"id": "cross-resume-codex", "source": "codex-glm", "target": "codex-kimi"},
+    {"id": "cross-resume-opencode", "source": "opencode-kimi", "target": "opencode-glm"}
+  ],
+  "conversation": [
+    "claude-sonnet",
+    "codex-glm",
+    "opencode-kimi"
+  ],
+  "release_dimensions": [
+    "linux",
+    "darwin"
+  ],
+  "note": "JSON is a YAML 1.2 subset. Requirements are independent of catalog capability declarations; absent support stays non-green.",
+  "scenarios": {
+    "auto-parser": {
+      "lanes": [
+        "nightly",
+        "release"
+      ],
+      "parser_model": "inkling",
+      "launch_cell": "codex-glm"
+    },
+    "broker-glab-git": {
+      "lanes": [
+        "nightly",
+        "release"
+      ],
+      "cell": "claude-sonnet"
+    }
+  }
+}
