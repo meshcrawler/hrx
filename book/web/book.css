@@ -1,0 +1,48 @@
+/* Cobalt & Citrus — the suite palette shared with the PDF edition's
+   latex/preamble.tex and with the sibling books; see book/brand/README.md
+   and book/STACK.md "A shared brand system". */
+:root {
+  --bg: #fafbff; --fg: #132548; --muted: #52617b; --accent: #2454d9;
+  --code-bg: #e2e8f7; --rule: #bac6dc;
+  --note-bg: #e2e8f7; --note: #2454d9; --tip-bg: #f5fadb; --tip: #445108;
+  --warn-bg: #e2e8f7; --warn: #132548; --side-bg: #e2e8f7; --side: #52617b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1930; --fg: #c4d0e8; --muted: #8fa0c2; --accent: #6e93f2;
+    --code-bg: #16253f; --rule: #27385c;
+    --note-bg: #16253f; --note: #6e93f2; --tip-bg: #2a2d12; --tip: #d5ed42;
+    --warn-bg: #16253f; --warn: #c4d0e8; --side-bg: #16253f; --side: #8fa0c2;
+  }
+}
+html { background: var(--bg); }
+body {
+  max-width: 44rem; margin: 0 auto; padding: 2rem 1rem 4rem;
+  background: var(--bg); color: var(--fg);
+  font: 1.06rem/1.6 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+h1, h2, h3, h4, nav, .callout-title, table { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+h1 { font-size: 2rem; line-height: 1.2; margin-top: 2.5rem; }
+h2 { font-size: 1.4rem; margin-top: 2.2rem; }
+h3 { font-size: 1.12rem; margin-top: 1.8rem; }
+a { color: var(--accent); }
+code { font: 0.88em ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+pre {
+  background: var(--code-bg); padding: 0.8rem 1rem; overflow-x: auto;
+  border-radius: 4px; line-height: 1.45;
+}
+pre code { font-size: 0.86rem; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 1rem 0; display: block; overflow-x: auto; }
+th, td { border-bottom: 1px solid var(--rule); padding: 0.35rem 0.6rem; text-align: left; vertical-align: top; }
+.callout { padding: 0.6rem 1rem; margin: 1.2rem 0; border-left: 3px solid; }
+.callout > :last-child { margin-bottom: 0; }
+.callout-title { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.callout-note { background: var(--note-bg); border-color: var(--note); }
+.callout-tip { background: var(--tip-bg); border-color: var(--tip); }
+.callout-warning { background: var(--warn-bg); border-color: var(--warn); }
+.callout-sidebar { background: var(--side-bg); border: 1px solid var(--side); border-width: 1px 0; }
+.callout-sidebar .callout-title { text-transform: none; letter-spacing: 0; font-size: 1rem; }
+nav { font-size: 0.92rem; }
+nav ul { padding-left: 1.2rem; }
+.nav { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 3rem; }
+header#title-block-header .subtitle { color: var(--muted); font-size: 1.2rem; }

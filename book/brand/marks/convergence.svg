@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="hrx convergence mark: three harness rails routed through one gateway">
+  <!-- three harness rails, each tapering as it nears the gateway -->
+  <path fill="#132548" d="M38 38h22v70l-11 14-11-14z"/>
+  <path fill="#132548" d="M140 38h22v70l-11 14-11-14z"/>
+  <!-- the active route, picked out in the accent -->
+  <path fill="#d5ed42" d="M89 38h22v70l-11 14-11-14z"/>
+  <!-- the gateway: one wide bar all three converge into -->
+  <rect x="38" y="122" width="124" height="40" fill="#2454d9"/>
+</svg>

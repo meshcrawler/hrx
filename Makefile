@@ -1,7 +1,7 @@
 PREFIX ?= $(HOME)/.local
 HRX_REVISION := $(shell git describe --always --dirty --abbrev=12 2>/dev/null || echo unknown)
 
-.PHONY: build test test-unit test-native test-pitput test-pitput-bridge test-pitput-dm test-pitput-opencode test-pitput-targeted test-hub-pitput test-broker test-dashboard test-all install install-broker
+.PHONY: build book book-pdf book-html book-epub book-check book-hooks test test-unit test-native test-pitput test-pitput-bridge test-pitput-dm test-pitput-opencode test-pitput-targeted test-hub-pitput test-broker test-dashboard test-all install install-broker
 
 build:
 	go build -trimpath -ldflags '-X github.com/meshcrawler/hrx/internal/app.buildRevision=$(HRX_REVISION)' -o bin/hrx ./cmd/hrx
@@ -66,3 +66,15 @@ install: build
 	install -d "$(PREFIX)/bin" "$(PREFIX)/share/zsh/site-functions"
 	install -m 0755 bin/hrx "$(PREFIX)/bin/hrx"
 	bin/hrx completion zsh > "$(PREFIX)/share/zsh/site-functions/_hrx"
+
+book:
+	book/tools/build.sh all
+
+book-pdf book-html book-epub:
+	book/tools/build.sh $(patsubst book-%,%,$@)
+
+book-check:
+	book/tools/check.sh all
+
+book-hooks:
+	ln -sf "$$(git rev-parse --show-toplevel)/book/tools/pre-commit" "$$(git rev-parse --git-path hooks)/pre-commit"

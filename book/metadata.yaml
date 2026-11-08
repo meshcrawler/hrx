@@ -1,0 +1,13 @@
+---
+title: "Running Agent Teams with hrx"
+subtitle: "Launching, Supervising and Scaling AI Coding Agents"
+author: "Stephen Barr"
+lang: en-US
+rights: "Draft. All rights reserved until a license is chosen."
+description: >
+  A practical guide to hrx, a launcher that starts Codex, Claude Code and
+  OpenCode against one model gateway, gives agents identities, credentials and
+  communication, and scales them from one terminal to networks of isolated
+  workers.
+toc-depth: 2
+---

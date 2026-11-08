@@ -1,0 +1,54 @@
+hrx - harness launcher for Codex, Claude Code and OpenCode through one model gateway
+
+  hrx --auto "claude as host/role/agent using pitput" [LAUNCH_OPTIONS] [--print]
+  hrx --profile NAME [LAUNCH_OPTIONS] [-- HARNESS_ARGS...]
+  hrx run --backend=proxmox --host HOST --profile NAME --agent-identity ID --pitput-board BOARD --prompt-file FILE
+  hrx remote inspect|logs|attach|stop|resume|replace-lease|destroy --name NAME
+  hrx network --file NETWORK.toml [--plan] [--only ROLE]
+  hrx sweep [--host USER@NODE]... [--dashboard URL] [--idle 24h] [--json] [--apply ID]... [--backup-storage local]
+  hrx profiles list|show NAME|validate NAME [--all] [--offline] [--json]
+  hrx doctor [--harness NAME] [--model NAME] [--yesod-comms] [--json]
+  hrx refresh
+  hrx dashboard [--listen 127.0.0.1:8789] [--source NAME=URL] [--hub]
+  hrx hub serve|enroll|status|revoke|rotate|collect
+  hrx matrix --input FILE
+  hrx models [--refresh] [--json] [--stale]
+  hrx codex [--model NAME] [--reasoning LEVEL] [--dry-run] [-- CODEX_ARGS...]
+  hrx claude [--model NAME] [--reasoning LEVEL] [--dry-run] [-- CLAUDE_ARGS...]
+  hrx opencode [--model NAME] [--reasoning LEVEL] [--dry-run] [-- OPENCODE_ARGS...]
+  hrx models|refresh --harness codex|claude|opencode
+  hrx catalog [--compact|--details] [--latest] [--refresh] [--stale] [--json] [--search TEXT] [--harness all|codex|claude|opencode] [--output FILE]
+  hrx completion zsh
+  hrx prime
+
+Launch options (all three harnesses):
+  --profile NAME              Use a validated HRX launch profile
+  --credential-file PATH      Override gateway key with private JSON key file
+  --gitlab                    Enable GitLab service accounts (broker plugin alias)
+  --plugin NAME               Enable gitlab-service-account-broker
+  --agent-identity ID          Broker-authorized agent identity (required with plugin)
+  --pitput                    Enable Pitput (automatic delivery for Codex)
+  --pitput-board BOARD        Enroll/monitor a board; repeat for multiple boards
+  --pitput-combined-preview    Opt in to combined Codex board/DM/ask delivery (preview)
+  --pitput-targeted           Notify for recipient mentions (new-session default)
+  --pitput-all-activity       Explicitly monitor all activity on selected boards
+  --pitput-follow-thread PATH Also notify for this topic; implies targeted selection
+  --pitput-no-dm              Do not deliver private Pitput direct messages
+  --pitput-dm-only            Deliver only direct messages (no boards; DM-only enrollment)
+  --yesod-mail | --yesod-bbs | --yesod-comms
+  --yesod-agent ADDRESS       Reuse an explicitly chosen registered identity
+  --yolo                      Disable approval prompts (OpenCode respects denies)
+  --no-yolo                   Override permissions.yolo and keep approval prompts
+  --resume SESSION_ID         Resume a specific harness session
+  --continue                  Continue the latest harness session
+
+Claude only:
+  --claude-config-dir PATH    Use an HRX-managed Claude config that HRX creates (never yours)
+  --claude-init PARTS         Initialize first-run answers once: theme,trust,bypass
+
+HRX settings: ~/.config/hrx/config.toml (or HRX_CONFIG / XDG_CONFIG_HOME).
+Codex provider definitions: $CODEX_HOME/config.toml (default ~/.codex/config.toml).
+Tab completion and models use a local cache; launches refresh and fail closed.
+Put hrx options before harness arguments; use -- before Codex subcommands.
+Use --latest on models/catalog, or before --model for latest-only Tab suggestions.
+Explicit older models remain launchable; omit --latest to show everything.

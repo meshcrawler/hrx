@@ -6,3 +6,5 @@ __pycache__/
 /artifacts/
 /.ci-image-input/
 /.twons/
+/book/out/
+/book/latex/version.tex

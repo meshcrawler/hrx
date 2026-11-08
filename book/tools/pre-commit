@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Git pre-commit hook for the book. Install with: make book-hooks
+# Runs only fast, deterministic checks, and only when the commit touches the
+# book or the CLI surface the book documents. No model calls happen here: the
+# AI documentation review runs in CI on the merge request.
+set -euo pipefail
+
+changed="$(git diff --cached --name-only)"
+grep -qE '^(book/|cmd/|internal/app/)' <<<"$changed" || exit 0
+
+root="$(git rev-parse --show-toplevel)"
+"$root/book/tools/check.sh" chapters
+"$root/book/tools/check.sh" scrub
+if grep -qE '^(cmd/|internal/app/)' <<<"$changed"; then
+  "$root/book/tools/check.sh" fresh
+fi

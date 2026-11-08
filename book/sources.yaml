@@ -1,0 +1,24 @@
+# Which code each chapter documents. The CI documentation review reads this map
+# to decide which chapters a merge request may have made stale; the pre-commit
+# hook uses the same paths to decide when to run the freshness check.
+# Paths are repository-relative globs.
+
+chapters:
+  01-why-a-launcher.md:
+    - internal/app/run.go
+    - internal/app/launch.go
+    - internal/app/harnesses.go
+  02-first-launch.md:
+    - Makefile
+    - internal/app/run.go
+    - internal/app/doctor.go
+    - internal/app/refresh.go
+    - internal/app/completion*.go
+    - internal/app/config.go
+    - internal/app/user_config.go
+  03-models-and-routes.md:
+    - internal/catalog/**
+    - internal/app/inventory*.go
+    - internal/app/evidence.go
+    - internal/app/codex_catalog.go
+    - internal/app/completion*.go
